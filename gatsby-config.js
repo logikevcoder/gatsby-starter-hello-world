@@ -6,12 +6,11 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
-    },
-  ],
+  siteMetadata: {
+    title: "gatsby tutorial course",
+    description: "course descriptions",
+    author: "Kevin Napier",
+    data: { name: "Kevin", age: 35 },
+  },
+  plugins: [`gatsby-plugin-styled-components`],
 }
