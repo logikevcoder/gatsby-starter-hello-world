@@ -1,36 +1,34 @@
-import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 
 const getData = graphql`
-  query {
+  query FirstQuery {
     site {
       siteMetadata {
-        title
+        siteTitle: title
         description
         author
         data {
-          name
           age
         }
       }
     }
   }
 `
-
 const HeaderStatic = () => {
   return (
     <StaticQuery
       query={getData}
-      render={data => {
+      render={orange => {
+        // console.log(orange)
+
         return (
           <div>
-            <p>{data.site.siteMetadata.description}</p>
+            <p>{orange.site.siteMetadata.description}</p>
           </div>
         )
       }}
-    >
-      Static Query
-    </StaticQuery>
+    ></StaticQuery>
   )
 }
 

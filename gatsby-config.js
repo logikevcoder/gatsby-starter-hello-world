@@ -8,15 +8,28 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "tutorial",
-    desciption: "Description about the site",
+    description: "just some description about our site",
     author: "Kevin Napier",
+    data: { name: "Kevin", age: 35 },
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // Add any options here
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
   ],
 }
