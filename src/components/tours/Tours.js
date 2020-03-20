@@ -1,13 +1,17 @@
 import React from "react"
 import SingleTour from "./SingleTour"
+import styles from "../../css/items.module.css"
 
 const Tours = ({ tours }) => {
-  console.log("tours :", tours)
   return (
-    <div>
-      Tours page
-      <SingleTour />
-    </div>
+    <section className={styles.tours}>
+      <h2>Our tours</h2>
+      <div className={styles.center}>
+        {tours.map(({ node }) => (
+          <SingleTour key={node.id} tour={node} />
+        ))}
+      </div>
+    </section>
   )
 }
 

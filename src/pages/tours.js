@@ -21,7 +21,6 @@ export const getTours = graphql`
           price
           slug
           country
-          id: contentful_id
           days
           images {
             fluid {
